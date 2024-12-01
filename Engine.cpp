@@ -69,3 +69,15 @@ void Engine::input()
 			}
 		   }
 }
+
+void Engine::update(float dtAsSeconds)
+{
+	int i = 0;
+	while(i < m_particle.size())
+	{
+		if(m_partilec.at(i).getTTl() > 0.0)
+		{
+			
+		}
+	}
+}
