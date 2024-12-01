@@ -8,7 +8,7 @@ Engine::Engine()
 	VideoMode vm(pixelWidth, pixelHeight);
 
 	//creates game window
-	m_Window(vm, "Particle!!", Style::Default);
+	RenderWindow m_Window(vm, "Particle!!", Style::Default);
 }
 
 void Engine::run()
@@ -34,50 +34,51 @@ void Engine::run()
 	    input();
 	    update(dt);
 	    draw();
-		}
 	}
 }
 void Engine::input()
 {
 	Event event;
-		while (window.pollEvent(event))
+	while (m_Window.pollEvent(event))
+	{
+		if (event.type == Event::Closed)
 		{
-		    if (event.type == Event::Closed)
-		    {
 			// Quit the game when the window is closed
-			window.close();
-		    }
+			m_Window.close();
+		}
 
-		    if (event.type == sf::Event::MouseButtonPressed)
-		    {
+		if (event.type == sf::Event::MouseButtonPressed)
+		{
 			if (event.mouseButton.button == sf::Mouse::Left)
 			{
-			    std::cout << "the left button was pressed" << std::endl;
-			    std::cout << "mouse x: " << event.mouseButton.x << std::endl;
-			    std::cout << "mouse y: " << event.mouseButton.y << std::endl;
-			    
-			    for(int i  = 0; i < 5; i++)
+				std::cout << "the left button was pressed" << std::endl;
+				std::cout << "mouse x: " << event.mouseButton.x << std::endl;
+				std::cout << "mouse y: " << event.mouseButton.y << std::endl;
+
+				for (int i = 0; i < 5; i++)
 				{
-					vector<Vector2i> location;
-					location.push_back(Vector2i(event.mouseButton.x, event.mouseButton.y));
+						vector<Vector2i> location;
+						location.push_back(Vector2i(event.mouseButton.x, event.mouseButton.y));
 
-					int x = rand() % 51 + 25;
+						int x = rand() % 51 + 25;
 
-					Particle spot( ,x, location);
-					m_particle.push_back(spot);
+						// Particle spot( ,x, location);
+						// m_particle.push_back(spot);
 				}
 			}
-		   }
+		}
+	}
 }
 
 void Engine::update(float dtAsSeconds)
 {
-	int i = 0;
-	while(i < m_particle.size())
-	{
-		if(m_partilec.at(i).getTTl() > 0.0)
-		{
-			
-		}
-	}
+//	int i = 0;
+//	while(i < m_particle.size())
+//	{
+//		if(m_partilec.at(i).getTTl() > 0.0)
+//		{
+//
+//		}
+//	}
 }
+void Engine::draw() {}

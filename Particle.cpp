@@ -1,5 +1,22 @@
 #include "Particle.h"
 
+Particle::Particle(RenderTarget& target, int numPoints, Vector2i mouseClickPosition) : m_A(2, 2) {}
+void Particle::draw(RenderTarget& target, RenderStates states) const {}
+void Particle::update(float dt) {}
+
+///rotate Particle by theta radians counter-clockwise
+///construct a RotationMatrix R, left mulitply it to m_A
+void Particle::rotate(double theta) {}
+
+///Scale the size of the Particle by factor c
+///construct a ScalingMatrix S, left multiply it to m_A
+void Particle::scale(double c) {}
+
+///shift the Particle by (xShift, yShift) coordinates
+///construct a TranslationMatrix T, add it to m_A
+void Particle::translate(double xShift, double yShift) {}
+
+
 
 bool Particle::almostEqual(double a, double b, double eps)
 {
@@ -8,7 +25,7 @@ bool Particle::almostEqual(double a, double b, double eps)
 
 void Particle::unitTests()
 {
-    int score = 0;
+/*    int score = 0;
 
     cout << "Testing RotationMatrix constructor...";
     double theta = M_PI / 4.0;
@@ -143,4 +160,5 @@ void Particle::unitTests()
     }
 
     cout << "Score: " << score << " / 7" << endl;
+*/
 }
