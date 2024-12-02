@@ -64,7 +64,7 @@ void Engine::input()
 						int x = rand() % 51 + 25;
 
 						// Particle spot( ,x, location);
-						// m_particle.push_back(spot);
+						// m_particles.push_back(spot);
 				}
 			}
 		}
@@ -73,28 +73,28 @@ void Engine::input()
 
 void Engine::update(float dtAsSeconds)
 {
-//	int i = 0;
-//	while(i < m_particle.size())
-//	{
-//		if(m_particle.at(i).getTTl() > 0.0)
-//		{
-//			m_particle.at(i).update(dtAsSeconds);
-//			i++;
-//		}
-//		else
-//		{
-//			m_particle.erase(m_particle.begin() +i);
-//		}
-//	}
+	int i = 0;
+	while(i < m_particles.size())
+	{
+		if(m_particles.at(i).getTTL() > 0.0)
+		{
+			m_particles.at(i).update(dtAsSeconds);
+			i++;
+		}
+		else
+		{
+			m_particles.erase(m_particles.begin() +i);
+		}
+	}
 }
 void Engine::draw()
 {
 
 	m_Window.clear();
 
-	for(int i = 0; i < m_particle.size(); i++)
+	for(int i = 0; i < m_particles.size(); i++)
 	{
-		m_Window.draw(m_particle.at(i));
+		m_Window.draw(m_particles.at(i));
 	}
 
 	m_Window.display();

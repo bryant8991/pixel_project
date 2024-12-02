@@ -5,7 +5,7 @@ namespace Matrices
 
     Matrix::Matrix(int _rows, int _cols) : rows(_rows), cols(_cols)
     {
-        a.resize(rows, vector<double>(cols, 0));
+        a = vector<vector<double>>(rows, vector<double>(cols,0));
     }
 
 
