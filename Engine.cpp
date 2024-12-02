@@ -1,3 +1,4 @@
+
 #include "Engine.h"
 
 Engine::Engine()
@@ -75,10 +76,26 @@ void Engine::update(float dtAsSeconds)
 //	int i = 0;
 //	while(i < m_particle.size())
 //	{
-//		if(m_partilec.at(i).getTTl() > 0.0)
+//		if(m_particle.at(i).getTTl() > 0.0)
 //		{
-//
+//			m_particle.at(i).update(dtAsSeconds);
+//			i++;
+//		}
+//		else
+//		{
+//			m_particle.erase(m_particle.begin() +i);
 //		}
 //	}
 }
-void Engine::draw() {}
+void Engine::draw()
+{
+
+	m_Window.clear();
+
+	for(int i = 0; i < m_particle.size(); i++)
+	{
+		m_Window.draw(m_particle.at(i));
+	}
+
+	m_Window.display();
+}
