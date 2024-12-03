@@ -1,4 +1,3 @@
-
 #include "Engine.h"
 
 Engine::Engine()
@@ -63,8 +62,8 @@ void Engine::input()
 
 						int x = rand() % 51 + 25;
 
-						// Particle spot( ,x, location);
-						// m_particles.push_back(spot);
+						Particle spot(m_Window, x ,location);
+						m_particles.push_back(spot);
 				}
 			}
 		}
