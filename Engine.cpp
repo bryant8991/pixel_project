@@ -62,8 +62,8 @@ void Engine::input()
 
 						int x = rand() % 51 + 25;
 
-						Particle spot(m_Window, x ,location);
-						m_particles.push_back(spot);
+					//	Particle spot(m_Window, x, location);
+					//	m_particles.push_back(spot);
 				}
 			}
 		}
@@ -72,7 +72,7 @@ void Engine::input()
 
 void Engine::update(float dtAsSeconds)
 {
-	int i = 0;
+	size_t i = 0;
 	while(i < m_particles.size())
 	{
 		if(m_particles.at(i).getTTL() > 0.0)
@@ -91,7 +91,7 @@ void Engine::draw()
 
 	m_Window.clear();
 
-	for(int i = 0; i < m_particles.size(); i++)
+	for(size_t i = 0; i < m_particles.size(); i++)
 	{
 		m_Window.draw(m_particles.at(i));
 	}
