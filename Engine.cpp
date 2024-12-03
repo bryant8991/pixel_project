@@ -57,13 +57,12 @@ void Engine::input()
 
 				for (int i = 0; i < 5; i++)
 				{
-						vector<Vector2i> location;
-						location.push_back(Vector2i(event.mouseButton.x, event.mouseButton.y));
+						Vector2i location(event.mouseButton.x, event.mouseButton.y);
 
 						int x = rand() % 51 + 25;
 
-					//	Particle spot(m_Window, x, location);
-					//	m_particles.push_back(spot);
+						Particle spot(m_Window, x, location);
+						m_particles.push_back(spot);
 				}
 			}
 		}
