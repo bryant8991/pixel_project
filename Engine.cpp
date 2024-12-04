@@ -15,8 +15,7 @@ void Engine::run()
 {
 	// clock & time  obj
 	Clock clock;
-	Time time1 = clock.getElapsedTime();
-	Time time2;
+	Time time1;
 
 	cout << "Starting Particle unit tests..." << endl;
 	Particle p(m_Window, 4, { (int)m_Window.getSize().x / 2, (int)m_Window.getSize().y / 2 });
@@ -27,12 +26,12 @@ void Engine::run()
 	while (m_Window.isOpen())
 	{
 	    // restarts clokc and returens time as a float of seconds
-	    Time time2 = clock.restart();
-	    float dt = time2.asSeconds();
+	    Time time1 = clock.getElapsedTime();
+	    clock.restart();
 
 	   // call private member functions
 	    input();
-	    update(dt);
+	    update(time1.asSeconds());
 	    draw();
 	}
 }
@@ -51,10 +50,6 @@ void Engine::input()
 		{
 			if (event.mouseButton.button == sf::Mouse::Left)
 			{
-				std::cout << "the left button was pressed" << std::endl;
-				std::cout << "mouse x: " << event.mouseButton.x << std::endl;
-				std::cout << "mouse y: " << event.mouseButton.y << std::endl;
-
 				for (int i = 0; i < 5; i++)
 				{
 						Vector2i location(event.mouseButton.x, event.mouseButton.y);
