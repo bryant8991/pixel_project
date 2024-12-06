@@ -6,7 +6,7 @@ Engine::Engine()
 	VideoMode vm(1920, 1080);
 
 	//creates game window
-	m_Window(vm, "Particle!!", Style::Default);
+	m_Window.create(vm, "Particle!!", Style::Default);
 }
 
 void Engine::run()
