@@ -2,10 +2,8 @@
 
 Engine::Engine()
 {
-	//Default constructor that gwts screen size and halves it
-	int pixelWidth = VideoMode::getDesktopMode().width;
-	int pixelHeight = VideoMode::getDesktopMode().height;
-	VideoMode vm(pixelWidth, pixelHeight);
+	//Default constructor that gets screen size 
+	VideoMode vm(1920, 1080);
 
 	//creates game window
 	RenderWindow m_Window(vm, "Particle!!", Style::Default);
