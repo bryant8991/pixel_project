@@ -52,7 +52,7 @@ void Engine::input()
 				{
 						Vector2i location(event.mouseButton.x, event.mouseButton.y);
 
-						int x = rand() % 51 + 25;
+						int x = rand() % 101 + 25;
 
 						Particle spot(m_Window, x, location);
 						m_particles.push_back(spot);
