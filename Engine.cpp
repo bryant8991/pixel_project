@@ -80,6 +80,11 @@ void Engine::update(float dtAsSeconds)
 }
 void Engine::draw()
 {
+	Font font;
+	if (!font.loadFromFile("arial.ttf"))
+	{
+           cout << "ERROR"<< endl;
+	}
 
 	m_Window.clear();
 
