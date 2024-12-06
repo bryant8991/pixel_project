@@ -90,7 +90,7 @@ void Engine::draw()
 	text.setFont(font);
 	text.setColor(sf::Color::White);
 	text.setCharacterSize(36);
-	text.setString("Pick any place on the screen to begin!\n Then watch the fun!!");
+	text.setString("Pick any place on the screen to begin!\nThen watch the fun!!");
 	m_Window.draw(text);
 	
 	for(size_t i = 0; i < m_particles.size(); i++)
