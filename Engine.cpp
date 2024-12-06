@@ -81,17 +81,20 @@ void Engine::update(float dtAsSeconds)
 void Engine::draw()
 {
 	Font font;
-	if (!font.loadFromFile("arial.ttf"))
-	{
-           cout << "ERROR"<< endl;
-	}
+	if (!font.loadFromFile("arial.ttf")) 
+	{cout << "ERROR"<< endl;}
 
 	m_Window.clear();
-
+	
+	Text text;
+	text.setFont(font);
+	text.setColor(sf::Color::White);
+	text.setCharacterSize(36);
+	text.setString("Pick any place on the screen to begin!");
+	m_Window.draw(text);
+	
 	for(size_t i = 0; i < m_particles.size(); i++)
-	{
-		m_Window.draw(m_particles.at(i));
-	}
+	{ m_Window.draw(m_particles.at(i)); }
 
 	m_Window.display();
 }
