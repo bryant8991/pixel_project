@@ -35,6 +35,7 @@ void Engine::run()
 }
 void Engine::input()
 {
+	int numOfClicks = 0;
 	Event event;
 	while (m_Window.pollEvent(event))
 	{
@@ -48,14 +49,26 @@ void Engine::input()
 		{
 			if (event.mouseButton.button == sf::Mouse::Left)
 			{
-				for (int i = 0; i < 5; i++)
+				for (int i = 0; i < 10; i++)
 				{
 						Vector2i location(event.mouseButton.x, event.mouseButton.y);
 
-						int x = rand() % 101 + 25;
+						if(numOfClicks % 2 == 0)
+						{
+							int x = rand() % 300 + 25;
 
-						Particle spot(m_Window, x, location);
-						m_particles.push_back(spot);
+							Particle spot(m_Window, x, location);
+							m_particles.push_back(spot);
+						}
+
+						else
+						{
+							int x = rand() % 101 + 25;
+
+							Particle spot(m_Window, x, location);
+							m_particles.push_back(spot);
+						}
+						numOfClicks++;
 				}
 			}
 		}
